@@ -1,0 +1,46 @@
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: lightblue;
+  height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: lightgreen;
+  color: white;
+  padding: 15px;
+}
+
+header {
+  background-color: lightgreen;
+  color: white;
+  padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;} 
+}
+
+.btn-xlarge {
+    padding: 10px 10px 10px 10px;
+    width: 500px;
+    font-size: 25px;
+    background-color: beige; 
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}

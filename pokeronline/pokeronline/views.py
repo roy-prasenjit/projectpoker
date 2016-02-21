@@ -3,9 +3,17 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.views.decorators.csrf import csrf_protect
-from django.shortcuts import render_to_response
-from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response, render
+from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
+from django.contrib.auth.views import login
+
+
+def first(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect("/home")
+    else:
+        return login(request)
  
 @csrf_protect
 def register(request):
@@ -41,6 +49,9 @@ def logout_page(request):
 @login_required
 def home(request):
     return render_to_response(
-    'home.html',
+    'dashboard.html',
     { 'user': request.user }
     )
+
+def test(request):
+    return render(request, 'dashboard.html')

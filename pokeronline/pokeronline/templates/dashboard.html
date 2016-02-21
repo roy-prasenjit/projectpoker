@@ -2,8 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
-    <title>Poker Online | 
-    {% block title %}{% endblock %}</title>
+    <title>Poker Online | {{ request.user }}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.css' %}">
@@ -12,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 </head>
 <body>
-<!-- 
+<div ng-app="dashboardModule"></div>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -21,36 +20,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">Poker Online</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="active"><a href="#">Profile</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#">Analytics</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
   </div>
 </nav>
- -->  
-<header class="container-fluid text-center">
-  <h2> Poker Online </h2>
-</header>
-
 <div class="container-fluid text-center">
 </div>
   <div class="row content">
     <div class="col-sm-3 sidenav">
-    	{% block side%}
-    	{% endblock %}
+    <!-- load stats through angular -->
+    	{{ request.user }}
+      email id
+      points
+      best hand
+      highest pot
+      what not
     </div>
-    <div class="col-sm-9 text-left"> 
-      {% block content %}
-      {% endblock %}
+    <div class="col-sm-9 text-left">
+      <a href="/newgame" target="_blank"><button class="btn-xlarge">Single Player</button></a>
+      <button class="btn-xlarge">Multiplayer Player</button>
     </div>
     <!-- <div class="col-sm-2 sidenav">
       <div class="well">

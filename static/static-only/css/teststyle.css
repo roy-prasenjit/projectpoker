@@ -1,0 +1,29 @@
+.o{
+	display: inline-block;
+}
+.i{
+	display: inline-block;
+}
+.h{
+	width: 500px;
+	height: 50px;
+    padding: 25px;
+    border: 1px solid navy;
+    margin: 25px;
+}
+.l{
+	width: 10px;
+	height: 100px;
+    padding: 25px;
+    border: 1px solid navy;
+    margin: 1px;
+    float: left;
+}
+.r{
+	width: 50px;
+	height: 10px;
+    padding: 25px;
+    border: 1px solid navy;
+    margin: 25px;
+    display: inline-block;
+}
